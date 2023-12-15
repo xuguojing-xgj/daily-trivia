@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: '戏偶',
+  tagline: '不要害怕缓慢前行，害怕的应该是停滞不前...',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
