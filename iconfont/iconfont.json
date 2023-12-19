@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1131",
+      "name": "资料库",
+      "font_class": "ziliaoku",
+      "unicode": "f00ca",
+      "unicode_decimal": 983242
+    },
+    {
+      "icon_id": "3741825",
+      "name": "书签",
+      "font_class": "shuqian-",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "4292650",
+      "name": "书",
+      "font_class": "shu",
+      "unicode": "e762",
+      "unicode_decimal": 59234
+    },
+    {
+      "icon_id": "8758508",
+      "name": "书",
+      "font_class": "shu1",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "11819080",
+      "name": "读书",
+      "font_class": "dushu",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    }
+  ]
+}
