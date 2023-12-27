@@ -3,15 +3,19 @@ import React from "react";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
+
+const dayjs = require('dayjs');
+const time = new Date()
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
+
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
+    title: `${dayjs(time).format('YYYY-MM-DD HH:mm')}`,
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
