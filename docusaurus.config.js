@@ -66,19 +66,23 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: '戏偶',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.jpg',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: '前端',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+        },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -93,7 +97,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: '前端',
                 to: '/docs/intro',
               },
             ],
@@ -102,8 +106,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: '稀土掘金',
+                href: 'https://juejin.cn/',
               },
               {
                 label: 'Discord',
@@ -129,7 +133,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `<a style={{color:#fff}} href="https://beian.miit.gov.cn/">京ICP备2023032161号-1</a>`,
       },
       prism: {
         theme: prismThemes.github,

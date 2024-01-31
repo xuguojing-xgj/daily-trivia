@@ -5,7 +5,9 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '《梦江南·千万恨》 -- 唐·温庭筠',
-    Svg: require('@site/static/img/ab1e6-hfnuw.svg').default,
+        // Jpg: landscape1,
+    Jpg: require('../../../static/img/landscape1.jpg').default,
+      
     description: (
       <>
             山月不知心里事，水风空落眼前花。
@@ -16,7 +18,8 @@ const FeatureList = [
   },
   {
     title: '孔子《论语：学而篇》',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    //   Jpg: landscape2,
+      Jpg: require('../../../static/img/landscape2.jpg').default,
     description: (
       <>
             学而不思则罔，思而不学则殆。
@@ -27,7 +30,8 @@ const FeatureList = [
   },
   {
     title: '《点绛唇·闲倚胡床》 -- 宋·苏轼',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+      // Jpg: landscape3,
+      Jpg: require('../../../static/img/landscape3.jpg').default,
     description: (
       <>
              闲倚胡床，庾公楼外峰千朵。与谁同坐。明月清风我。
@@ -38,11 +42,13 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Jpg, title, description}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+          <div className="text--center">
+              {/* {Jpg} */}
+              <img className={styles.featureJpg} src={Jpg} alt="" />
+        {/* <Svg className={styles.featureSvg} role="img" /> */}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
