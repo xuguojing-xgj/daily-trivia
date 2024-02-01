@@ -133,7 +133,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<a style={{color:#fff}} href="https://beian.miit.gov.cn/">京ICP备2023032161号-1</a>`,
+        copyright: `<a href="https://beian.miit.gov.cn/">京ICP备2023032161号-1</a>`,
       },
       prism: {
         theme: prismThemes.github,
