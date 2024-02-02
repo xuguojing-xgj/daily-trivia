@@ -11,11 +11,11 @@ outline: deep
 
 #### 解决方法:  
 
-<div style="margin:15px 0px"></div>
+
 
 ##### 1. 为父元素添加 overflow:hidden
 
-<div style="margin:15px 0px"></div>
+
 
 ##### 2. 为父元素添加高度和清除浮动
 

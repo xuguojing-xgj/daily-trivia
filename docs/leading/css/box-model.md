@@ -15,19 +15,18 @@ outline: deep
 
 #### 标准盒模型与怪异盒模型的表现效果的区别之处:
 
-<div style="margin:15px 0px"></div>
 
 > ##### 1. 标准盒模型中 
 
    - ``width`` 和 ``height`` 指的是内容区域 ``content`` 的宽度
    - 标准盒模型下盒子的大小 = content + border + padding + margin
-   <img src="./images/w3cBoxModle.jpg"  style="width:600px; height:300px" />
+   <img src="./images/w3cBoxModle.jpg" />
 
 > ##### 2. 怪异盒模型中
    
    - ``width`` 和 ``height``指的是内容，边框，内边距总的宽度(content + border + padding)
    - 怪异盒模型下盒子的大小 = width (content + border + padding) + margin
-     <img src="./images/ieBoxModle.jpg"  style="width:600px; height:300px" />
+     <img src="./images/ieBoxModle.jpg"  />
 
 - 还可以通过 ``box-sizing`` 设置盒子模型的解析方式
    
