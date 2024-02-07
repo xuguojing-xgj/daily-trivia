@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '戏偶',
-  tagline: '不积蹞步,无以至千里;不积小流,无以成江海;',
+  tagline: '不要害怕缓慢前行, 应该害怕的是停滞不前...',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

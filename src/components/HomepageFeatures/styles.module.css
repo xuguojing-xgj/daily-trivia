@@ -1,12 +1,49 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.mianContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 5rem 0;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .featureJpg {
     width: 400px;
     height: 200px;
     border-radius: 10px;
+}
+
+.animationContainer {
+    width: 300px;
+    height: 300px;
+}
+
+.animationBox {
+    width: 200px;
+    height: 200px;
+    background-color: #2e8555;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 1rem 1rem 1rem 0;
+    text-align: left;
+    /* transition: background .25s; */
+    width: 100%;
+}
+
+.btn::after {
+    background: #abff84;
+    border-radius: 0.25rem;
+    content: "";
+    display: block;
+    height: 0.25rem;
+    /* transform: scaleX(0); */
+    transform-origin: 0 0;
+    transition: transform .25s;
+    width: 100%;
 }
