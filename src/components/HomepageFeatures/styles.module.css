@@ -11,34 +11,33 @@
 
 
 .featureJpg {
-    width: 400px;
-    height: 200px;
-    border-radius: 10px;
+    width: 16.667rem;
+    height: 8.333rem;
+    border-radius: 0.417rem;
 }
 
 .animationContainer {
-    width: 300px;
-    height: 300px;
+    width: 14.5rem;
+    height: 14.5rem;
 }
 
 
 .Img {
-    width: 300px;
-    height: 300px;
+    width: 12.5rem;
+    height: 12.5rem;
 }
 
 .code {
-    width: 800px;
-
+    width: 45.33rem;
 }
 
 .btn {
     background-color: transparent;
-    width: 120px;
+    width: 5rem;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1rem;
     padding: 1rem 1rem 1rem 0;
     text-align: left;
     /* transition: background .25s; */
@@ -54,4 +53,23 @@
     transform-origin: 0 0;
     transition: transform .25s;
     width: 100%;
+}
+
+@media screen and (max-width: 996px) {
+    .mianContainer {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .Img {
+        display: block;
+        margin: 0 auto;
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .code {
+        width: 50vh;
+    }
 }

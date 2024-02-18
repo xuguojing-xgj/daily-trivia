@@ -114,23 +114,23 @@ export default function HomepageFeatures() {
           {/* 直接渲染 CodeComponent 并传递 codeString */}
           <CodeComponent
             codeString={`
-            const RotatingCube = () => {
-            const boxRef = useRef()      
-            useLayoutEffect(() => {
-                // use gsap context for easy cleanup!
-                let ctx = gsap.context(() => {
-        
-                gsap.to(boxRef.current, {
-                duration: 10,
-                repeat: -1,
-                rotation: 360,
-                })
-            
-            });
-                return () => ctx.revert();
-            }, [])
-                return ( <div ref={boxRef} /> )
-            }`}
+const RotatingCube = () => {
+const boxRef = useRef()      
+useLayoutEffect(() => {
+    // use gsap context for easy cleanup!
+    let ctx = gsap.context(() => {
+
+    gsap.to(boxRef.current, {
+    duration: 10,
+    repeat: -1,
+    rotation: 360,
+    })
+
+});
+    return () => ctx.revert();
+}, [])
+    return ( <div ref={boxRef} /> )
+}`}
           />
         </div>
       </div>
