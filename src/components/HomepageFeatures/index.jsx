@@ -96,10 +96,17 @@ export default function HomepageFeatures() {
 
   // 注意这里的样式类名已经更正
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mianContainer}>
       {/* 这里使用自闭合标签 */}
-      <div className={styles.animationBox} ref={boxRef} />
-      <div>
+      <img
+        src={require("../../../static/img/fengche.png").default}
+        className={styles.Img}
+        alt=""
+        ref={boxRef}
+      />
+      {/* <div className={styles.animationBox} ref={boxRef} /> */}
+
+      <div className={styles.code}>
         <button type="button" className={styles.btn}>
           React.js
         </button>
@@ -107,7 +114,7 @@ export default function HomepageFeatures() {
           {/* 直接渲染 CodeComponent 并传递 codeString */}
           <CodeComponent
             codeString={`
-        const RotatingCube = () => {
+            const RotatingCube = () => {
             const boxRef = useRef()      
             useLayoutEffect(() => {
                 // use gsap context for easy cleanup!
@@ -121,9 +128,9 @@ export default function HomepageFeatures() {
             
             });
                 return () => ctx.revert();
-        }, [])
-           return ( <div ref={boxRef} /> )
-        }`}
+            }, [])
+                return ( <div ref={boxRef} /> )
+            }`}
           />
         </div>
       </div>
