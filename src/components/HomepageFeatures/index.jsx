@@ -1,7 +1,8 @@
 // import clsx from "clsx";
 // import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
-import React, { useRef, useLayoutEffect, useEffect } from "react";
+// import AOS from 'aos';
+import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -65,75 +66,56 @@ hljs.registerLanguage("javascript", javascript);
 // }
 
 // CodeComponent 定义在组件外部
-const CodeComponent = ({ codeString }) => {
-  useEffect(() => {
-    document.querySelectorAll("pre code").forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  }, [codeString]); // 添加 codeString 作为依赖项
+// const CodeComponent = ({ codeString }) => {
+//   useEffect(() => {
+//     document.querySelectorAll("pre code").forEach((block) => {
+//       hljs.highlightBlock(block);
+//     });
+//   }, [codeString]); // 添加 codeString 作为依赖项
 
-  return (
-    <pre>
-      <code>{codeString}</code>
-    </pre>
-  );
-};
+//   return (
+//     <pre>
+//       <code>{codeString}</code>
+//     </pre>
+//   );
+// };
 
 export default function HomepageFeatures() {
-  const boxRef = useRef();
+    const boxRef = useRef();
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(boxRef.current, {
-        duration: 10,
-        repeat: -1,
-        rotation: 360,
-      });
-    });
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.to(boxRef.current, {
+                duration: 10,
+                repeat: -1,
+                rotation: 360,
+            });
+        });
 
-    return () => ctx.revert();
-  }, []);
+        return () => ctx.revert();
+    }, []);
 
-  // 注意这里的样式类名已经更正
-  return (
-    <div className={styles.mianContainer}>
-      {/* 这里使用自闭合标签 */}
-      <img
-        src={require("../../../static/img/fengche.png").default}
-        className={styles.Img}
-        alt=""
-        ref={boxRef}
-      />
-      {/* <div className={styles.animationBox} ref={boxRef} /> */}
+    // 注意这里的样式类名已经更正
+    return (
+        <div className={styles.mianContainer}>
+            {/* <div data-aos="zoom-out-up"> 123</div> */}
+            {/* 这里使用自闭合标签 */}
+            {/* <img
+                src={require("../../../static/img/fengche.png").default}
+                className={styles.Img}
+                alt=""
+                ref={boxRef}
+            /> */}
+            {/* <div className={styles.animationBox} ref={boxRef} /> */}
 
-      <div className={styles.code}>
-        <button type="button" className={styles.btn}>
-          React.js
-        </button>
-        <div>
-          {/* 直接渲染 CodeComponent 并传递 codeString */}
-          <CodeComponent
-            codeString={`
-const RotatingCube = () => {
-const boxRef = useRef()      
-useLayoutEffect(() => {
-    // use gsap context for easy cleanup!
-    let ctx = gsap.context(() => {
-
-    gsap.to(boxRef.current, {
-    duration: 10,
-    repeat: -1,
-    rotation: 360,
-    })
-
-});
-    return () => ctx.revert();
-}, [])
-    return ( <div ref={boxRef} /> )
-}`}
-          />
+            {/* <div className={styles.code}>
+                <button type="button" className={styles.btn}>
+                    React.js
+                </button>
+                <div>
+                    直接渲染 CodeComponent 并传递 codeString
+                </div> */}
+            {/* </div> */}
         </div>
-      </div>
-    </div>
-  );
+    );
 }

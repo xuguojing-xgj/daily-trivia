@@ -20,9 +20,11 @@
     "@docusaurus/preset-classic": "3.1.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "sass": "^1.71.1",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "@commitlint/config-conventional": "^19.0.3",
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/types": "3.1.1",
+    "aos": "^2.3.4",
     "commitlint": "^19.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.0",
