@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import Heading from "@theme/Heading";
+// import clsx from "clsx";
+// import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 import React, { useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
@@ -65,7 +65,7 @@ hljs.registerLanguage("javascript", javascript);
 // }
 
 // CodeComponent 定义在组件外部
-const CodeComponent = React.memo(({ codeString }) => {
+const CodeComponent = ({ codeString }) => {
   useEffect(() => {
     document.querySelectorAll("pre code").forEach((block) => {
       hljs.highlightBlock(block);
@@ -77,7 +77,7 @@ const CodeComponent = React.memo(({ codeString }) => {
       <code>{codeString}</code>
     </pre>
   );
-});
+};
 
 export default function HomepageFeatures() {
   const boxRef = useRef();
