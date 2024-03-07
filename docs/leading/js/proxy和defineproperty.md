@@ -4,6 +4,18 @@ description: Create a doc page with rich content.
 
 # Proxy 和 defineProperty 的区别
 
+兼容性
+
+- `Object.defineProperty`在 ES5 中就已经被引入，所以它有更好的浏览器兼容性。Proxy 是 ES6 加入的新功能，老版的浏览器可能没有实现。
+
+- `Object.defineProperty`只能劫持对象的属性，而 Proxy 可以劫持整个对象。
+
+- `Object.defineProperty`方法中，不能直接定义新增的属性，否则会报错。Proxy 对象定义的属性，都是动态的，可以任意定义。
+
+能力
+
+- `Proxy`比`Object.defineProperty`更强大。`Proxy`有 13 种拦截方法，包括 get、set、has、delete、apply、construct 等，所以它能拦截更多操作。而`Object.defineProperty`只能劫持到对象属性的读取和设置行为。
+
 ```js
 let obj = {
   a: 1,
