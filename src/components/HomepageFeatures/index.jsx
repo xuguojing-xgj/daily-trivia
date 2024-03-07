@@ -2,8 +2,8 @@
 // import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 // import AOS from 'aos';
-import React, { useRef, useLayoutEffect } from "react";
-import gsap from "gsap";
+import React, {} from "react";
+// import gsap from "gsap";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 
@@ -81,19 +81,6 @@ hljs.registerLanguage("javascript", javascript);
 // };
 
 export default function HomepageFeatures() {
-    const boxRef = useRef();
-
-    useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.to(boxRef.current, {
-                duration: 10,
-                repeat: -1,
-                rotation: 360,
-            });
-        });
-
-        return () => ctx.revert();
-    }, []);
 
     // 注意这里的样式类名已经更正
     return (
