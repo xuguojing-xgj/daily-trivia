@@ -1,7 +1,6 @@
 ---
-outline: deep
+sidebar_position: 3
 ---
-
 
 
 # 如何解决盒子塌陷问题

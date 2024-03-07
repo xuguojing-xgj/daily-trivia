@@ -1,4 +1,4 @@
-# 实现一个可迭代的对象
+# Symbol.iterator 和 Array
 
 <!-- [obj[Symbol.iterator]()](https://zh.javascript.info/iterable#zong-jie) -->
 
