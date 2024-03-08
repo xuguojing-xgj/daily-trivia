@@ -12,6 +12,6 @@
 
 - pinia 的核心概念为 定义(stores)为一个函数 state, actions, getters;
 
-  - 对于 pinia 来说可以更好的支持 typescript, 并且 pinia 支持持久化存储;
+  - 对于 pinia 来说可以更好的支持 typescript, 并且 pinia 也支持持久化存储;
   - 并且 pinia 是一个轻量级的管理状态库打包体积更小 结构简介 API 更直观;
 
