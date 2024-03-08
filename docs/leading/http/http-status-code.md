@@ -64,9 +64,9 @@
 
 - 400(Bad Request): 该状态码表示请求出现错误，请求无法被服务器理解。
 
-- 401(Unauthorized): 该状态码表示请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。
+- 401(Unauthorized): 该状态码表示请求要求身份验证。对于需要登录的网页，服务器可能返回此响应。
 
-- 402(Payment Required): 该状态码保留以便将来使用。
+<!-- - 402(Payment Required): 该状态码保留以便将来使用。 -->
 
 - 403(Forbidden): 该状态码表示服务器理解请求客户端的请求，但是拒绝执行此请求。
 
@@ -80,60 +80,60 @@
 
 - 408(Request Timeout): 该状态码表示客户端没有在服务器预备等待的时间内完成请求的发送。
 
-- 409(Conflict): 该状态码表示由于冲突，请求无法完成。
+<!-- - 409(Conflict): 该状态码表示由于冲突，请求无法完成。 -->
 
-- 410(Gone): 该状态码表示请求的资源已经从服务器上移除。
+<!-- - 410(Gone): 该状态码表示请求的资源已经从服务器上移除。 -->
 
-- 411(Length Required): 该状态码表示服务器拒绝在没有定义 Content-Length 头的情况下接受请求。
+<!-- - 411(Length Required): 该状态码表示服务器拒绝在没有定义 Content-Length 头的情况下接受请求。 -->
 
-- 412(Precondition Failed): 该状态码表示前提条件错误。 在请求设置 If-Match 头，如果实体未满足 前提条件，服务器就应当返回 412(Precondition Failed)。
+<!-- - 412(Precondition Failed): 该状态码表示前提条件错误。 在请求设置 If-Match 头，如果实体未满足 前提条件，服务器就应当返回 412(Precondition Failed)。 -->
 
-- 413(Request Entity Too Large): 该状态码表示请求的实体过大，服务器无法处理。
+<!-- - 413(Request Entity Too Large): 该状态码表示请求的实体过大，服务器无法处理。 -->
 
-- 414(Request-URI Too Long): 该状态码表示请求的 URI 过长，服务器无法处理。
+<!-- - 414(Request-URI Too Long): 该状态码表示请求的 URI 过长，服务器无法处理。 -->
 
-- 415(Unsupported Media Type): 该状态码表示请求格式不正确，服务器无法处理
+<!-- - 415(Unsupported Media Type): 该状态码表示请求格式不正确，服务器无法处理 -->
 
-- 416(Requested Range Not Satisfiable): 该状态码表示服务器不能满足客户端请求的范围。
+<!-- - 416(Requested Range Not Satisfiable): 该状态码表示服务器不能满足客户端请求的范围。 -->
 
-- 417(Expectation Failed): 该状态码表示服务器无法满足 Expect 的请求。
+<!-- - 417(Expectation Failed): 该状态码表示服务器无法满足 Expect 的请求。 -->
 
-- 418(I'm a teapot): 该状态码表示服务器端理解请求客户端的请求是错误的。
+<!-- - 418(I'm a teapot): 该状态码表示服务器端理解请求客户端的请求是错误的。 -->
 
-- 419(Authentication Timeout): 该状态码表示服务器端理解请求客户端的请求是错误的。
+<!-- - 419(Authentication Timeout): 该状态码表示服务器端理解请求客户端的请求是错误的。 -->
+<!--  -->
+<!-- - 420(Method Failure): 该状态码是 Spring 框架中的错误码，与 Spring 框架的子项目相关。 -->
 
-- 420(Method Failure): 该状态码是 Spring 框架中的错误码，与 Spring 框架的子项目相关。
+<!-- - 421(Misdirected Request): 该状态码表示服务器无法处理请求，因为请求头中指定了与服务器中配置冲突 -->
 
-- 421(Misdirected Request): 该状态码表示服务器无法处理请求，因为请求头中指定了与服务器中配置冲突
-
-- 422(Unprocessable Entity): 该状态码表示请求格式正确，但是由于含有语义错误，无法响应。
+<!-- - 422(Unprocessable Entity): 该状态码表示请求格式正确，但是由于含有语义错误，无法响应。 -->
 
 - 423(Locked): 该状态码表示请求资源被锁定。
 
-- 424(Failed Dependency): 该状态码表示由于之前的请求失败，导致当前请求失败。
+<!-- - 424(Failed Dependency): 该状态码表示由于之前的请求失败，导致当前请求失败。 -->
 
 > ## **500~599 服务器错误**
 
-- 500(Internal Server Error): 该状态码表示服务器端在执行请求时发生了错误。
+- 500(Internal Server Error): 表示服务器端在执行请求时发生了错误。
 
-- 501(Not Implemented): 该状态码表示服务器不支持请求的功能。
+- 501(Not Implemented): 表示服务器不支持请求的功能。
 
-- 502(Bad Gateway): 该状态码表示作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到 无效的响应。
+- 502(Bad Gateway): 表示作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。
 
-- 503(Service Unavailable): 该状态码表明服务器暂时处于超负载或正在停机维护，无法处理请求。
+- 503(Service Unavailable): 表明服务器暂时处于超负载或正在停机维护，无法处理请求。
 
-- 504(Gateway Timeout): 该状态码表示作为网关或者代理工作的服务器尝试执行请求时，未能从上游服务器接 收到响应。
+<!-- - 504(Gateway Timeout): 该状态码表示作为网关或者代理工作的服务器尝试执行请求时，未能从上游服务器接收到响应。 -->
 
-- 505(HTTP Version Not Supported): 该状态码表示服务器不支持请求中使用的 HTTP 协议版本。
+<!-- - 505(HTTP Version Not Supported): 该状态码表示服务器不支持请求中使用的 HTTP 协议版本。 -->
 
-- 506(Variant Also Negotiates): 该状态码表示服务器存在内部配置错误：被请求的变体有配置中 未被通知，无法处理。
+<!-- - 506(Variant Also Negotiates): 该状态码表示服务器存在内部配置错误：被请求的变体有配置中 未被通知，无法处理。 -->
 
-- 507(Insufficient Storage): 该状态码表示服务器无法存储完成请求所必须的内容。
+<!-- - 507(Insufficient Storage): 该状态码表示服务器无法存储完成请求所必须的内容。 -->
 
-- 508(Loop Detected): 该状态码表示服务器在处理请求时陷入死循环。
+<!-- - 508(Loop Detected): 该状态码表示服务器在处理请求时陷入死循环。 -->
 
-- 509(Bandwidth Limit Exceeded): 该状态码表示服务器达到带宽限制。
+<!-- - 509(Bandwidth Limit Exceeded): 该状态码表示服务器达到带宽限制。 -->
 
-- 510(Not Extended): 该状态码表示获取资源所需要的策略并没有没满足。
+<!-- - 510(Not Extended): 该状态码表示获取资源所需要的策略并没有没满足。 -->
 
-- 511(Network Authentication Required): 该状态码表示客户端需要进行身份验证才能获得网络访问权限。
+<!-- - 511(Network Authentication Required): 该状态码表示客户端需要进行身份验证才能获得网络访问权限。 -->
