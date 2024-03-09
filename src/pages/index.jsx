@@ -16,7 +16,7 @@ function HomepageHeader() {
 
     React.useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: [siteConfig.tagline],
+            strings: ['不要害怕缓慢前行, 应该害怕的是停滞不前...', siteConfig.tagline],
             typeSpeed: 130,
             startDelay: 300, // 开始等待时间 (毫秒)
             loop: true, // 是否循环
