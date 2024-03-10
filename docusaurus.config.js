@@ -31,14 +31,14 @@ const config = {
     // may want to replace "en" with "zh-Hans".
     i18n: {
         defaultLocale: 'zh',
-        locales: ['en', 'zh'],
+        locales: ['zh',],
         localeConfigs: {
-            en: {
-                // htmlLang: 'eb-GB'
-            },
             zh: {
 
             },
+            // en: {
+            //     htmlLang: 'eb-GB'
+            // },
         }
     },
     plugins: ['docusaurus-plugin-sass'],
@@ -91,6 +91,11 @@ const config = {
                         label: 'Blog',
                         position: 'left'
                     },
+                    {
+                        type: 'localeDropdown',
+                        position: 'right',
+                    },
+
                     {
                         href: 'https://github.com/facebook/docusaurus',
                         label: 'GitHub',
@@ -147,6 +152,30 @@ const config = {
                 theme: prismThemes.github,
                 darkTheme: prismThemes.dracula,
             },
+            // algolia: {
+                //               appId: '',
+                // Public API key: it is safe to commit it
+                //  apiKey: '',
+
+                //    indexName: '',
+
+                // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+                // externalUrlRegex: 'external\\.com|domain\\.com',
+
+                // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+                // replaceSearchResultPathname: {
+                //     from: '/docs/', // or as RegExp: /\/docs\//
+                //     to: '/',
+                // },
+
+                // Optional: Algolia search parameters
+                // searchParameters: {},
+                // 开启上下文搜索
+                // contextualSearch: true,
+
+                // searchPagePath: 'search',
+
+            // }
         }),
 };
 
