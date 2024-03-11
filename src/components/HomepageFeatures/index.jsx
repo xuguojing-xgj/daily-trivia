@@ -2,13 +2,23 @@
 // import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 // import AOS from 'aos';
-import React, {} from "react";
+import React, { } from "react";
+// import { gsap } from "gsap";
+// import { useGSAP } from "@gsap/react";
+
+// import { CustomEase } from "gsap/CustomEase";
+
+// import { EaselPlugin } from "gsap/EaselPlugin";
+// import { TextPlugin } from "gsap/TextPlugin";
+
+
+// gsap.registerPlugin(useGSAP, EaselPlugin, TextPlugin, CustomEase);
 // import gsap from "gsap";
-import hljs from "highlight.js";
-import javascript from "highlight.js/lib/languages/javascript";
+// import hljs from "highlight.js";
+// import javascript from "highlight.js/lib/languages/javascript";
 
 // Then register the languages you need
-hljs.registerLanguage("javascript", javascript);
+// hljs.registerLanguage("javascript", javascript);
 // const FeatureList = [
 //   {
 //     title: "《梦江南·千万恨》 -- 唐·温庭筠",
@@ -81,10 +91,12 @@ hljs.registerLanguage("javascript", javascript);
 // };
 
 export default function HomepageFeatures() {
-
+    // gsap.to('')
     // 注意这里的样式类名已经更正
     return (
         <div className={styles.mianContainer}>
+
+
             {/* <div data-aos="zoom-out-up"> 123</div> */}
             {/* 这里使用自闭合标签 */}
             {/* <img
