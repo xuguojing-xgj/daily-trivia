@@ -3,6 +3,20 @@
 import styles from "./styles.module.css";
 // import AOS from 'aos';
 import React, { } from "react";
+import { Table, Tag, Popover, Steps } from 'antd';
+// import { } from 'antd';
+const customDot = (dot, { status, index }) => (
+    <Popover
+        content={
+            <span>
+                step {index} status: {status}
+            </span>
+        }
+    >
+        {dot}
+    </Popover>
+);
+const description = 'You can hover on the dot.';
 // import { gsap } from "gsap";
 // import { useGSAP } from "@gsap/react";
 
@@ -89,6 +103,58 @@ import React, { } from "react";
 //     </pre>
 //   );
 // };
+const columns = [
+    {
+        title: '语法',
+        dataIndex: 'syntax',
+        key: 'syntax',
+        render: (_, row) => {
+            return (
+                <>
+                    <span>{row.name}</span>
+                </>
+            )
+        }
+    },
+    {
+        title: '导出',
+        dataIndex: 'exportSyntax',
+        key: 'exportSyntax',
+        render: (_, row) => {
+            return (
+                <>
+                    <Tag color={'geekblue'}>{row.exportSyntax}
+                    </Tag>
+                </>
+            )
+        }
+    },
+    {
+        title: '导入',
+        dataIndex: 'importSyntax',
+        key: 'importSyntax',
+        render: (_, row) => (
+            <>
+                <Tag color={'green'}>{row.importSyntax}</Tag>
+            </>
+        )
+    }
+];
+const data = [
+    {
+        key: '1',
+        name: '默认',
+        exportSyntax: 'export default function Button() {}',
+        importSyntax: 'import Button from \'./Button\';',
+    },
+    {
+        key: '2',
+        name: '具名',
+        exportSyntax: 'export function Button() {}',
+        importSyntax: 'import { Button } from \'./Button\';',
+    }
+];
+const TableCom = () => <Table columns={columns} dataSource={data} pagination={false} />;
 
 export default function HomepageFeatures() {
     // gsap.to('')
@@ -96,7 +162,30 @@ export default function HomepageFeatures() {
     return (
         <div className={styles.mianContainer}>
 
+            <Steps
+                current={1}
+                progressDot={customDot}
+                items={[
+                    {
+                        title: 'Finished',
+                        description,
+                    },
+                    {
+                        title: 'In Progress',
+                        description,
+                    },
+                    {
+                        title: 'Waiting',
+                        description,
+                    },
+                    {
+                        title: 'Waiting',
+                        description,
+                    },
+                ]}
+            />
 
+            <TableCom></TableCom>
             {/* <div data-aos="zoom-out-up"> 123</div> */}
             {/* 这里使用自闭合标签 */}
             {/* <img
