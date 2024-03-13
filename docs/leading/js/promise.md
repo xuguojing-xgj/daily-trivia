@@ -132,3 +132,32 @@ Promise.all(iterable);
 ```
 
 - Promise.all 静态方法接受一个 Promise 可迭代对象作为输入, 并返回一个 Promise
+
+## Promise.race
+
+##### 代码
+
+- 静态方法接受一个 Promise 可迭代对象作为输入, 并返回一个 Promise
+- 这个返回的 Promise 会随着第一个返回的结果敲定而敲定
+
+```js
+function sleep(time, value, state) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state === "兑现") {
+        return resolve(value);
+      } else {
+        return reject(new Error(value))
+      }
+    }, time);
+  });
+}
+
+const p1 = sleep(500, "一", "兑现");
+const p2 = sleep(100, "二", "兑现");
+
+Promise.race([p1, p2]).then((value) => {
+  console.log(value); // “二”
+  // 两个都会兑现，但 p2 更快
+});
+```
