@@ -186,6 +186,7 @@ export default function HomepageFeatures() {
             />
 
             <TableCom></TableCom>
+            {/* <SplitData></SplitData> */}
             {/* <div data-aos="zoom-out-up"> 123</div> */}
             {/* 这里使用自闭合标签 */}
             {/* <img
