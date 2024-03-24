@@ -107,21 +107,7 @@ console.log(derivedP instanceof MyPromise); // false
 console.log(derivedP instanceof Promise); // true
 ```
 
-## Promise.all
-
-- 基本示例
-
-```js
-let p1 = Promise.resolve("success");
-let p2 = "1";
-let p3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, "foo");
-});
-
-Promise.all([p1, p2, p3]).then((res) => {
-  console.log(res);
-});
-```
+## Promise.all()
 
 - 语法
 
@@ -133,12 +119,42 @@ Promise.all(iterable);
 
 - Promise.all 静态方法接受一个 Promise 可迭代对象作为输入, 并返回一个 Promise
 
-## Promise.race
+
+- 返回值
+
+  - 一个 Promise 状态为 :
+    - 已兑现
+    - 同步兑现
+    - 异步兑现
+
+- Promise.all() 方法是 promise 并发方法之一, 它可用于聚合多个 Promise 的结果。
+- 不管是 resolve 还是 reject 状态它都会执行返回
+
+- 示例
+
+```js
+const p1 = Promise.resolve("success");
+const p2 = "1";
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "foo");
+});
+
+const p4 = Promise.reject("2");
+Promise.all([p1, p2, p3, p4])
+  .then((res) => {
+    console.log(res); // ['success', '1', 'foo']
+  })
+  .catch((e) => {
+    console.log(e); // 2
+  });
+```
+
+## Promise.race()
 
 ##### 代码
 
-- 静态方法接受一个 Promise 可迭代对象作为输入, 并返回一个 Promise
-- 这个返回的 Promise 会随着第一个返回的结果敲定而敲定
+- 静态方法接受一个 Promise 可迭代对象作为输入, 并返回一个 Promise;
+- 返回第一个执行成功的 Promise 不论它的状态是 resolve 还是 reject;
 
 ```js
 function sleep(time, value, state) {
@@ -147,7 +163,7 @@ function sleep(time, value, state) {
       if (state === "兑现") {
         return resolve(value);
       } else {
-        return reject(new Error(value))
+        return reject(new Error(value));
       }
     }, time);
   });
@@ -159,5 +175,23 @@ const p2 = sleep(100, "二", "兑现");
 Promise.race([p1, p2]).then((value) => {
   console.log(value); // “二”
   // 两个都会兑现，但 p2 更快
+});
+```
+
+## Promise.any()
+
+- 只有当所有的 Promise 都失败(reject)时才会返回一个 rejected 状态的 Promise;
+
+- 如果想在任意一个 Promise 失败时立即返回, 可以考虑使用 Promise.race() 方法;
+
+- Promise.race() 会返回最先完成的 Promise 无论这个结果是 resolve 还是 reject;
+
+```js
+const p1 = Promise.resolve("1");
+
+const p2 = Promise.reject("2");
+
+Promise.any([p1, p2]).then((val) => {
+  console.log(val); // 1
 });
 ```

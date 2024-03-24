@@ -16,6 +16,8 @@ description: Create a doc page with rich content.
 
 - `Proxy`比`Object.defineProperty`更强大。`Proxy`有 13 种拦截方法，包括 get、set、has、delete、apply、construct 等，所以它能拦截更多操作。而`Object.defineProperty`只能劫持到对象属性的读取和设置行为。
 
+
+### defineProperty
 ```js
 let obj = {
   a: 1,
@@ -58,6 +60,10 @@ function observe(obj) {
 
 observe(obj);
 
+```
+
+### proxy
+```js
 // Proxy 观察
 
 function obServe(obj) {
