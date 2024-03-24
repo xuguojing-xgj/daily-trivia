@@ -2,6 +2,32 @@
 
 ## 1. 生命周期
 
+- vue2
+  - beforeCreate
+  - created
+  - beforeMount
+  - mounted
+  - beforeUpdate
+  - updated
+  - activated
+  - deactivated
+  - beforeDestroy
+  - destroyed
+  - errorCaptured
+- vue3
+  - onMounted
+  - onUpdated
+  - onUnmounted
+  - onBeforeMount
+  - onBeforeUpdate
+  - onBeforeUnmount
+  - onErrorCaptured
+  - onRenderTracked
+  - onRenderTriggered
+  - onActivated
+  - onDeactivated
+  - onServerPrefetch
+
 ## 2. 响应式数据
 
 - 重写了 Object.defineProperty() 和 Proxy 两种方式
@@ -12,16 +38,20 @@
 
 ## 4. 虚拟 DOM
 
--   vue2 diff 算法基于双端比较
+- vue2 diff 算法基于双端比较
 
 ## 5. 组件通信
 
-## 6. 状态管理
+- vue2 是 emit 和 props
 
-## 7. 路由
+- vue3 是 defineEmits 和 defineProps
 
-## 8. 打包工具
+<!-- ## 6. 状态管理 -->
 
-## 9. 性能优化
+<!-- ## 7. 路由 -->
 
-## 10. 兼容性
+<!-- ## 8. 打包工具 -->
+
+<!-- ## 9. 性能优化 -->
+
+<!-- ## 10. 兼容性 -->
