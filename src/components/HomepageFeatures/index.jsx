@@ -156,6 +156,7 @@ const data = [
 ];
 const TableCom = () => <Table columns={columns} dataSource={data} pagination={false} />;
 
+
 export default function HomepageFeatures() {
     // gsap.to('')
     // 注意这里的样式类名已经更正
@@ -186,6 +187,7 @@ export default function HomepageFeatures() {
             />
 
             <TableCom></TableCom>
+
             {/* <SplitData></SplitData> */}
             {/* <div data-aos="zoom-out-up"> 123</div> */}
             {/* 这里使用自闭合标签 */}
