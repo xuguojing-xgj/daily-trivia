@@ -1,0 +1,28 @@
+/* @media screen and (max-width: 600px) {
+
+    .layout {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .main {
+        width: 50vw;
+        height: 50vh;
+    }
+} */
+
+.body {
+    background-image: url(./images/WechatIMG83.jpg);
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main {
+    width: calc(100% / 2);
+    height: 50vh;
+}
