@@ -7,7 +7,7 @@
 - 例如:
 
 ```js
- fn.call(thisArg, arg1, arg2, ......)
+ func.call(thisArg, arg1, arg2, ......)
 ```
 
 ## apply
@@ -17,7 +17,7 @@
 - 例如:
 
 ```js
- fn.apply(thisArg, [arg1, arg2, ......])
+ func.apply(thisArg, [arg1, arg2, ......])
 ```
 
 ## bind
@@ -27,7 +27,7 @@
 - 例如:
 
 ```js
-let newFn = fn.bind(thisArg, arg1, arg2, ......)
+let newFunc = func.bind(thisArg, arg1, arg2, ......)
 ```
 
 - 总结:

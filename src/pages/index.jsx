@@ -42,7 +42,7 @@ function HomepageHeader() {
                 <div className={styles.buttons}>
                     <Link
                         className="button button--secondary button--lg"
-                        to="/docs/leading/js/promise"
+                        to="/docs/leading/html/图片懒加载"
                     >
                         开始学习⏱️
                     </Link>
