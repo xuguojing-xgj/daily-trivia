@@ -1,76 +1,36 @@
 .mianContainer {
-    min-height:100vh;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-    /* padding: 1.5rem 0; */
-    /* min-height: 100vh; */
-    /* width: 80%; */
-    /* width: 80%; */
-    /* margin: 0 auto; */
+  margin: 0 auto;
+  width: 80%;
+  min-height: 100vh;
+
+  display: flex; /* 启用flexbox布局 */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+.card {
+  width: 30rem;
+  height: 15.87rem;
+  background: #eee;
+  border-radius: 0.417rem;
+  margin-top: 2.083rem;
+  margin-bottom: 2.083rem;
+  /* box-shadow: 5px 10px 5px 10px #888888; */
+  transition: transform 0.3s ease-in-out; /* 过渡效果，使变换平滑进行 */
 
-.featureJpg {
-    width: 16.667rem;
-    height: 8.333rem;
-    border-radius: 0.417rem;
+  text-align: center;
+  line-height: 65px;
+  padding-top: 20px;
+
 }
 
-.animationContainer {
-    width: 14.5rem;
-    height: 14.5rem;
+.card:hover {
+  transform: scale(1.1); /* 鼠标悬停时放大到两倍大小 */
 }
 
-
-.Img {
-    width: 12.5rem;
-    height: 12.5rem;
+.container:last-child {
+    color: red;
 }
-
-.code {
-    width: 45.33rem;
-}
-
-.btn {
-    background-color: transparent;
-    width: 5rem;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 1rem 1rem 1rem 0;
-    text-align: left;
-    /* transition: background .25s; */
-}
-
-.btn::after {
-    background: #abff84;
-    border-radius: 0.25rem;
-    content: "";
-    display: block;
-    height: 0.25rem;
-    /* transform: scaleX(0); */
-    transform-origin: 0 0;
-    transition: transform .25s;
-    width: 100%;
-}
-
-@media screen and (max-width: 996px) {
-    .mianContainer {
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .Img {
-        display: block;
-        margin: 0 auto;
-        width: 12.5rem;
-        height: 12.5rem;
-    }
-
-    .code {
-        width: 80vw;
-    }
-}
+/* .card:last-of-type {
+    
+} */
