@@ -1,4 +1,4 @@
-.mianContainer {
+.topContainer {
   margin: 0 auto;
   width: 80%;
   min-height: 100vh;
@@ -6,6 +6,13 @@
   display: flex; /* 启用flexbox布局 */
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.bottomContainer {
+  margin: 0 auto;
+  width: 80%;
+  display: flex; /* 启用flexbox布局 */
+  justify-content: center;
 }
 
 .card {
@@ -21,7 +28,6 @@
   text-align: center;
   line-height: 65px;
   padding-top: 20px;
-
 }
 
 .card:hover {
@@ -29,7 +35,7 @@
 }
 
 .container:last-child {
-    color: red;
+  color: red;
 }
 /* .card:last-of-type {
     
