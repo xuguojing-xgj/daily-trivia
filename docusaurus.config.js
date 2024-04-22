@@ -98,7 +98,7 @@ const config = {
                     },
 
                     {
-                        href: 'https://github.com/facebook/docusaurus',
+                        href: 'https://github.com/xuguojing-xgj/daily-trivia',
                         label: 'GitHub',
                         position: 'right',
                     },
@@ -142,7 +142,7 @@ const config = {
                             },
                             {
                                 label: 'GitHub',
-                                href: 'https://github.com/facebook/docusaurus',
+                                href: 'https://github.com/xuguojing-xgj/daily-trivia',
                             },
                         ],
                     },
