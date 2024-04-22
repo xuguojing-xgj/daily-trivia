@@ -34,7 +34,7 @@ const Card = ({ id, img, name, describe }) => {
 
 export default function HomepageFeatures() {
     return (
-        <div >
+        <div>
             <div className={styles.topContainer}>
                 <Card id={1} img={VueImg} name={'Vue'} describe={'渐进式 JavaScript 框架'}></Card>
                 <Card id={2} img={ReactImg} name={'React'} describe={'用于构建 Web 和原生交互界面的库'}></Card>

@@ -1,9 +1,9 @@
+/* Full height only for top container */
 .topContainer {
-  margin: 0 auto;
   width: 80%;
   min-height: 100vh;
-
-  display: flex; /* 启用flexbox布局 */
+  margin: 0 auto;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -11,65 +11,30 @@
 .bottomContainer {
   margin: 0 auto;
   width: 80%;
-  display: flex; /* 启用flexbox布局 */
+  display: flex;
   justify-content: center;
 }
 
+/* Card styles */
 .card {
-  width: calc(80% / 2);
+  width: calc(80% / 2); /* For larger screens */
   height: 15.87rem;
+  margin: 2.083rem 0;
+  padding-top: 20px;
   background: #eee;
   border-radius: 0.417rem;
-  margin-top: 2.083rem;
-  margin-bottom: 2.083rem;
-  /* box-shadow: 5px 10px 5px 10px #888888; */
-  transition: transform 0.3s ease-in-out; /* 过渡效果，使变换平滑进行 */
-
   text-align: center;
   line-height: 65px;
-  padding-top: 20px;
+  transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
 }
 
 .card:hover {
-  transform: scale(1.1); /* 鼠标悬停时放大到两倍大小 */
+  transform: scale(1.1); /* Scale up on hover */
 }
 
-
+/* Responsive design adjustments */
 @media screen and (max-width: 600px) {
-    .topContainer {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 100vh;
-      
-        display: flex; /* 启用flexbox布局 */
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      
-      .bottomContainer {
-        margin: 0 auto;
-        width: 80%;
-        display: flex; /* 启用flexbox布局 */
-        justify-content: center;
-      }
-      
-      .card {
-        width: 30rem;
-        height: 15.87rem;
-        background: #eee;
-        border-radius: 0.417rem;
-        margin-top: 2.083rem;
-        margin-bottom: 2.083rem;
-        /* box-shadow: 5px 10px 5px 10px #888888; */
-        transition: transform 0.3s ease-in-out; /* 过渡效果，使变换平滑进行 */
-      
-        text-align: center;
-        line-height: 65px;
-        padding-top: 20px;
-      }
-      
-      .card:hover {
-        transform: scale(1.1); /* 鼠标悬停时放大到两倍大小 */
-      }
-      
+  .card {
+    width: 30rem; /* Adjust card width on smaller screens */
+  }
 }
