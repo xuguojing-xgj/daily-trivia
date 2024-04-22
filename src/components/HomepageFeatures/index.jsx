@@ -43,7 +43,7 @@ export default function HomepageFeatures() {
 
             </div>
             <div className={styles.bottomContainer}>
-                <Card id={5} img={NodeImg} name={'Node'} describe={'JavaScript 运行时'}></Card>
+                <Card id={5} img={NodeImg} name={'Node.js'} describe={'JavaScript 运行时'}></Card>
             </div>
         </div>
     );
