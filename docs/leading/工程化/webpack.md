@@ -50,3 +50,16 @@ console.log(10);
 - css-minimizer-webpack-plugin 压缩 css
 
 - image-webpack-loader 压缩图片
+
+## 路由拆包
+
+- webpack + vue cli
+- 魔法注释
+
+```js
+{
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "About" */'@/pages/About/About.vue')
+},
+```
