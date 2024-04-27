@@ -69,7 +69,24 @@ function observe(obj) {
 observe(obj);
 ```
 
-### proxy
+### Proxy
+
+- Proxy 对象用于创建一个对象的代理, 实现基本操作的拦截和自定义(查找、赋值、枚举、函数调用等)
+
+  - handler
+    - 包含捕捉器(trap)的占位符对象, 可译为处理器对象
+  - traps
+    - 提供属性访问的方法
+  - target
+    - 被 Proxy 代理虚拟化的对象
+
+- 方法
+  - Proxy.revocable()
+  - 可撤销一个代理对象
+
+```js
+Proxy.revocable(target, handler);
+```
 
 ```js
 // Proxy 观察
