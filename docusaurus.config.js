@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
     title: '夜尽天明',
     // tagline: '不要害怕缓慢前行, 应该害怕的是停滞不前...',
-    tagline: '莫等闲, 白了少年头, 空悲切...',
+    tagline: '欲买桂花同载酒, 终不似, 少年游...',
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
