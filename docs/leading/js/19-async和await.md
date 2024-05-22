@@ -87,3 +87,20 @@ runGenerator(fetchDataGenerator).then((result) =>
   console.log("All data fetched:", result)
 );
 ```
+
+## Async/Await 语法糖
+
+- 示例
+
+```js
+async function myAsyncFunction() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Done!"), 1000);
+  });
+
+  let result = await promise; // 等待 promise 解决
+  console.log(result); // 输出: Done!
+}
+
+myAsyncFunction();
+```

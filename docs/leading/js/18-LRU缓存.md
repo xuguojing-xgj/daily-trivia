@@ -1,4 +1,4 @@
-# LRU (Least Recently Used) 缓存
+# LRU 缓存
 
     -   LRU (Least Recently Used) 是一种常见的缓存淘汰策略
     -   核心思想是当缓存空间达到上限时, 优先淘汰最近最少被使用的缓存数据

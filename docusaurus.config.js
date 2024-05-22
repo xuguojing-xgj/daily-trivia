@@ -89,7 +89,7 @@ const config = {
                     },
                     {
                         to: '/blog',
-                        label: 'Blog',
+                        label: '源码系列',
                         position: 'left'
                     },
                     {
