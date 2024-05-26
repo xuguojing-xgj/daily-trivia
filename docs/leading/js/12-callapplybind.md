@@ -1,4 +1,4 @@
-# call apply 和 bind 区别
+# call apply bind
 
 ## call
 
