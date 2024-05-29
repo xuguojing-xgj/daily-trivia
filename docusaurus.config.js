@@ -112,7 +112,7 @@ const config = {
                         items: [
                             {
                                 label: '前端',
-                                to: '/docs/intro',
+                                to: '/docs/category/前端基础',
                             },
                         ],
                     },
