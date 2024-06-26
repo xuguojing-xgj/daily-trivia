@@ -81,13 +81,44 @@
     - [errorCaptured](https://v2.cn.vuejs.org/v2/api/#errorCaptured)
 
 - vue3
+
   - onMounted
+
     - 注册一个回调函数,在组件挂载之后完成执行
     - 类型
 
     ```ts
-      function onMounted(callback: () => void): void;
+    function onMounted(callback: () => void): void;
     ```
+
+    - 详细信息
+
+      > 组件在以下情况下被视为已挂载
+
+      - 其所有同步子组件都已经被挂载(不包含异步组件或 `<Suspense>`树内的组件)
+      - 其自身的 DOM 树已经创建完成并插入了父容器中。注意仅当根容器在文档中时,才可以保证组件 DOM 树也在文档中。
+      - 这个钩子通常用于执行需要访问组件所渲染的 DOM 树相关的副作用, 或是在 [服务端渲染应用](https://cn.vuejs.org/guide/scaling-up/ssr.html) 中用于确保 DOM 相关代码仅在客户端执行
+
+      - **这个钩子在服务器端渲染期间不会被调用。**
+      - 示例
+
+        > 通过模板引用访问一个元素
+
+        ```html
+        <script setup>
+          import { ref, onMounted } from "vue";
+
+          const el = ref();
+
+          onMounted(() => {
+            el.value; // <div>
+          });
+        </script>
+
+        <template>
+          <div ref="el"></div>
+        </template>
+        ```
 
 - onUpdated
 - onUnmounted
