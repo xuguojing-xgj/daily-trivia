@@ -21,7 +21,7 @@
   height: 15.87rem;
   margin: 2.083rem 0;
   padding-top: 20px;
-  background: #eee;
+  background: var(--bg-color);
   border-radius: 0.417rem;
   text-align: center;
   line-height: 65px;
@@ -32,6 +32,18 @@
   transform: scale(1.1); /* Scale up on hover */
 }
 
+.text_color {
+  color: var(--text-color);
+}
+[data-theme="dark"] {
+  --bg-color: #eee;
+  --text-color: #000;
+}
+
+[data-theme="light"] {
+  --bg-color: #eee;
+  --text-color: #000;
+}
 /* Responsive design adjustments */
 @media screen and (max-width: 600px) {
   .card {

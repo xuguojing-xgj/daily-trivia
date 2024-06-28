@@ -20,8 +20,8 @@ const Card = ({ id, img, name, describe }) => {
     const res = options.map((item) => (
         <div key={item.id}>
             <img width={'50px'} src={item.img} />
-            <h1> {item.name} </h1>
-            <p> {item.describe} </p>
+            <h1 className={styles.text_color}> {item.name} </h1>
+            <p className={styles.text_color}> {item.describe} </p>
         </div>
     ))
 

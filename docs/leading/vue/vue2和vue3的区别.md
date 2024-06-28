@@ -87,9 +87,9 @@
     - 注册一个回调函数,在组件挂载之后完成执行
     - 类型
 
-    ```ts
-    function onMounted(callback: () => void): void;
-    ```
+      ```js
+        function onMounted(callback: () => void): void;
+      ```
 
     - 详细信息
 
@@ -120,10 +120,106 @@
         </template>
         ```
 
-- onUpdated
-- onUnmounted
-- onBeforeMount
-- onBeforeUpdate
+  - onUpdated
+
+    - 注册一个回调函数,在组件因为响应式状态变更而更新其 DOM 树之后调用
+    - 类型
+
+      ```js
+          function onUpdated(callback: () => void) :void
+      ```
+
+    - 详细信息
+      > 父组件的更新钩子将在其子组件的更新钩子之后调用
+    - 这个钩子会在组件的任意 DOM 更新后被调用, 这些更新可能是由不同的状态变更导致的,因为多个状态变更可以在同一个渲染周期中批量执行(考虑到性能因素)。如果你需要在某个特定的状态更改后访问更新后的 DOM, 请使用 `nextTick()` 作为代替
+    - **这个钩子在服务器渲染期间不会被调用**
+      :::tip
+
+      不要在 updated 钩子中更改组件的状态，这可能会导致无限的更新循环！
+
+      :::
+
+    - 示例
+
+      > 访问更新后的 DOM
+
+      ```html
+      <script setup>
+        import { ref, onUpdated } from "vue";
+
+        const count = ref(0);
+
+        onUpdated(() => {
+          // 文本内容应该与当前的 `count.value` 一致
+          console.log(document.getElementById("count").textContent);
+        });
+      </script>
+
+      <template>
+        <button id="count" @click="count++">{{ count }}</button>
+      </template>
+      ```
+
+  - onUnmounted
+
+    - 注册一个回调函数,在组件实例被卸载之后调用
+    - 类型
+
+      ```js
+          function onUnmounted(callback: () => void): void
+      ```
+
+    - 详细信息
+      > 一个组件在以下情况下被视为已卸载
+      - 其子组件都已被卸载
+      - 所有相关的响应式作用(渲染作用以及 `setup()` 时创建的计算属性和侦听器)都已经停止
+        > 可以在这个钩子中手动清理一些副作用,例如计时器、DOM、事件侦听器或者与服务器的连接
+      - **这个钩子在服务器渲染期间不会被调用**
+    - 示例
+
+      ```html
+      <script setup>
+        import { onMounted, onUnmounted } from "vue";
+
+        let intervalId;
+        onMounted(() => {
+          intervalId = setInterval(() => {
+            // ...
+          });
+        });
+
+        onUnmounted(() => clearInterval(intervalId));
+      </script>
+      ```
+
+  - onBeforeMount
+
+    - 注册一个钩子,在组件被挂载之前被调用
+    - 类型
+
+      ```js
+        function onBeforeMount(callback: () => void): void
+      ```
+
+    - 详细信息
+
+    > 当这个钩子被调用时,组件已经完成了其响应式状态的设置,但还没创建 DOM 节点, 它即将首次执行 DOM 渲染过程
+
+    - **这个钩子在服务器渲染期间不会被调用**
+
+  - onBeforeUpdate
+
+    - 注册一个钩子, 在组件即将因为响应式状态变更而更新其 DOM 树之前调用
+    - 类型
+
+      ```js
+        function onBeforeUpdate(callback: () => void): void
+      ```
+
+    - 详细信息
+      > 这个钩子可以用来在 Vue 更新 DOM 之前访问 DOM 状态。在这个钩子中更改状态也是安全的
+      - **这个钩子在服务器端渲染期间不会被调用。**
+
 - onBeforeUnmount
 - onErrorCaptured
 - onRenderTracked
@@ -159,7 +255,3 @@
 <!-- ## 9. 性能优化 -->
 
 <!-- ## 10. 兼容性 -->
-
-```
-
-```
