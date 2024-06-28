@@ -220,13 +220,159 @@
       > 这个钩子可以用来在 Vue 更新 DOM 之前访问 DOM 状态。在这个钩子中更改状态也是安全的
       - **这个钩子在服务器端渲染期间不会被调用。**
 
-- onBeforeUnmount
-- onErrorCaptured
-- onRenderTracked
-- onRenderTriggered
-- onActivated
-- onDeactivated
-- onServerPrefetch
+  - onBeforeUnmount
+
+    - 注册一个钩子,在组件实例被卸载之前被调用
+    - 类型
+
+      ```js
+        function onBeforeUnmount(callback: () => void): void
+      ```
+
+    - 详细信息
+      > 当这个钩子被调用时, 组件实例依然还保存有全部功能。
+      - **这个钩子在服务器端渲染期间不会被调用。**
+
+  - onErrorCaptured
+
+    - 注册一个钩子,在捕获了后代组件传递的错误时调用
+    - 类型
+
+      ```js
+        function onErrorCaptured(callback: ErrorCapturedHook): void
+
+        type ErrorCapturedHook = (
+            err: unknown,
+            instance: ComponentPublicInstance | null,
+            info: string
+        ) => boolean | void
+      ```
+
+    - 详细信息
+
+      > 错误可以从以下几个来源中捕获
+
+      - 组件渲染
+      - 事件处理器
+      - 生命周期钩子函数
+      - `setup()`函数
+      - 侦听器
+      - 自定义指令钩子
+      - 过度钩子
+
+      > 这个钩子带有三个实参: 错误对象, 触发该错误的组件实例, 以及一个说明错误来源类型的信息字符串
+
+      - [具体参考](https://cn.vuejs.org/api/composition-api-lifecycle.html#onbeforeupdate)
+
+  - onRenderTracked
+
+    - 注册一个调试钩子，当组件渲染过程中追踪到响应式依赖时调用。
+    - **这个钩子仅在开发模式下可用，且在服务器端渲染期间不会被调用。**
+    - 类型
+
+      ```js
+          function onRenderTracked(callback: DebuggerHook): void
+
+          type DebuggerHook = (e: DebuggerEvent) => void
+
+          type DebuggerEvent = {
+              effect: ReactiveEffect
+              target: object
+              type: TrackOpTypes /* 'get' | 'has' | 'iterate' */
+              key: any
+          }
+      ```
+
+    - **参考** [深入响应式系统](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)
+
+  - onRenderTriggered
+
+    - 注册一个调试钩子，当响应式依赖的变更触发了组件渲染时调用。
+    - **这个钩子仅在开发模式下可用，且在服务器端渲染期间不会被调用。**
+    - 类型
+
+      ```js
+        function onRenderTriggered(callback: DebuggerHook): void
+
+        type DebuggerHook = (e: DebuggerEvent) => void
+
+        type DebuggerEvent = {
+            effect: ReactiveEffect
+            target: object
+            type: TriggerOpTypes /* 'set' | 'add' | 'delete' | 'clear' */
+            key: any
+            newValue?: any
+            oldValue?: any
+            oldTarget?: Map<any, any> | Set<any>
+        }
+      ```
+
+    - **参考** [深入响应式系统](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)
+
+  - onActivated
+
+    - 注册一个回调函数，若组件实例是 `<KeepAlive>` 缓存树的一部分，当组件被插入到 DOM 中时调用。
+    - **这个钩子在服务器端渲染期间不会被调用。**
+    - 类型
+
+      ```js
+          function onActivated(callback: () => void): void
+      ```
+
+    - **参考** [指南-缓存实例的生命周期](https://cn.vuejs.org/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+
+  - onDeactivated
+
+    - 注册一个回调函数，若组件实例是 `<KeepAlive>` 缓存树的一部分，当组件从 DOM 中被移除时调用。
+    - **这个钩子在服务器端渲染期间不会被调用。**
+    - 类型
+
+      ```js
+          function onDeactivated(callback: () => void): void
+      ```
+
+    - **参考** [指南-缓存实例的生命周期](https://cn.vuejs.org/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+
+  - onServerPrefetch
+
+    - 注册一个异步函数，在组件实例在服务器上被渲染之前调用。
+    - 类型
+
+      ```js
+          function onServerPrefetch(callback: () => Promise<any>): void
+      ```
+
+    - 详细信息
+
+      > 如果这个钩子返回了一个 Promise，服务端渲染会在渲染该组件前等待该 Promise 完成。
+      > 这个钩子仅会在服务端渲染中执行，可以用于执行一些仅存在于服务端的数据抓取过程。
+
+    - 示例
+
+      ```html
+      <script setup>
+        import { ref, onServerPrefetch, onMounted } from "vue";
+
+        const data = ref(null);
+
+        onServerPrefetch(async () => {
+          // 组件作为初始请求的一部分被渲染
+          // 在服务器上预抓取数据，因为它比在客户端上更快。
+          data.value = await fetchOnServer(/* ... */);
+        });
+
+        onMounted(async () => {
+          if (!data.value) {
+            // 如果数据在挂载时为空值，这意味着该组件
+            // 是在客户端动态渲染的。将转而执行
+            // 另一个客户端侧的抓取请求
+            data.value = await fetchOnClient(/* ... */);
+          }
+        });
+      </script>
+      ```
+
+    - **参考** [服务端渲染 (SSR)](https://cn.vuejs.org/guide/scaling-up/ssr.html)
 
 ## 2. 响应式数据
 
