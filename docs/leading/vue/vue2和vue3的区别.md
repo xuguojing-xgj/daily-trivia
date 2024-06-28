@@ -376,6 +376,75 @@
 
 ## 2. 响应式数据
 
+- vue2 使用 Object.defineProperty()
+
+  - 源码
+
+    ```js
+    // 在 defineReactive 方法中
+    export function defineReactive() {
+      Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        get: function reactiveGetter() {
+          const value = getter ? getter.call(obj) : val;
+          if (Dep.target) {
+            if (__DEV__) {
+              dep.depend({
+                target: obj,
+                type: TrackOpTypes.GET,
+                key,
+              });
+            } else {
+              dep.depend();
+            }
+            if (childOb) {
+              childOb.dep.depend();
+              if (isArray(value)) {
+                dependArray(value);
+              }
+            }
+          }
+          return isRef(value) && !shallow ? value.value : value;
+        },
+        set: function reactiveSetter(newVal) {
+          const value = getter ? getter.call(obj) : val;
+          if (!hasChanged(value, newVal)) {
+            return;
+          }
+          if (__DEV__ && customSetter) {
+            customSetter();
+          }
+          if (setter) {
+            setter.call(obj, newVal);
+          } else if (getter) {
+            // #7981: for accessor properties without setter
+            return;
+          } else if (!shallow && isRef(value) && !isRef(newVal)) {
+            value.value = newVal;
+            return;
+          } else {
+            val = newVal;
+          }
+          childOb = shallow
+            ? newVal && newVal.__ob__
+            : observe(newVal, false, mock);
+          if (__DEV__) {
+            dep.notify({
+              type: TriggerOpTypes.SET,
+              target: obj,
+              key,
+              newValue: newVal,
+              oldValue: value,
+            });
+          } else {
+            dep.notify();
+          }
+        },
+      });
+    }
+    ```
+
 - 重写了 Object.defineProperty() 和 Proxy 两种方式
 
 ## 3. 组件化开发
