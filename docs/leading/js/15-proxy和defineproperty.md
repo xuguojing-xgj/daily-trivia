@@ -69,6 +69,8 @@ function observe(obj) {
 observe(obj);
 ```
 
+- 上面我们使用了 `Object.defineProperty` 去劫持了一个对象, 去观察了这个对象值是否进行了更改
+
 ### Proxy
 
 - Proxy 对象用于创建一个对象的代理, 实现基本操作的拦截和自定义(查找、赋值、枚举、函数调用等)
@@ -116,3 +118,5 @@ function obServe(obj) {
 
 const proxy = obServe(obj);
 ```
+
+- 而 `new Proxy()` 不仅可以对一个对象进行读写更改, 还可以删除一个对象的属性

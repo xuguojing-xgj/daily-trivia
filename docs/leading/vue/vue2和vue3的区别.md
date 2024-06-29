@@ -377,6 +377,7 @@
 ## 2. 响应式数据
 
 - vue2 使用 Object.defineProperty()
+- v-model 双向数据绑定
 
   - 源码
 
