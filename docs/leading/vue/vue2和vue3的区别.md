@@ -33,7 +33,7 @@
     - 这里合适在现有 DOM 将要被更新之前访问它,比如移出手动添加的事件监听器
     - **该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务器端进行。**
 
-  - updated
+  - update d
 
     - 在数据更改导致的虚拟 DOM 重新渲染和更新完毕之后被调用。
     - `updated` 与 `mounted` 一样,不会保证所有的子组件也都被重新渲染完毕,如果你希望等到整个视图都渲染完毕,可以在 `updated` 里使用 `vm.$nextTick`
@@ -376,6 +376,8 @@
 
 ## 2. 响应式数据
 
+> 重写了 Object.defineProperty() 和 Proxy 两种方式
+
 - vue2 使用 Object.defineProperty()
 - v-model 双向数据绑定
 
@@ -446,7 +448,11 @@
     }
     ```
 
-- 重写了 Object.defineProperty() 和 Proxy 两种方式
+- vue3 使用了 new proxy()
+
+```js
+
+```
 
 ## 3. 组件化开发
 
