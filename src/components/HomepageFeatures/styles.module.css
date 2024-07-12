@@ -26,6 +26,7 @@
   text-align: center;
   line-height: 65px;
   transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+  cursor: pointer;
 }
 
 .card:hover {
