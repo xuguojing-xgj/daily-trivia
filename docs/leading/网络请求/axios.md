@@ -2,7 +2,37 @@
 
 ## 请求拦截
 
+```js
+// 添加请求拦截器
+axios.interceptors.request.use(
+  (config) => {
+    // 在发送请求之前做些什么
+    console.log("请求被拦截:", config);
+    return config;
+  },
+  (error) => {
+    // 处理请求错误
+    return Promise.reject(error);
+  }
+);
+```
+
 ## 响应拦截
+
+```js
+// 添加响应拦截器
+axios.interceptors.response.use(
+  (response) => {
+    // 对响应数据做些什么
+    console.log("响应被拦截:", response);
+    return response;
+  },
+  (error) => {
+    // 处理响应错误
+    return Promise.reject(error);
+  }
+);
+```
 
 ## 取消一个 Axios 请求
 

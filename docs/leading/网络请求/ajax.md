@@ -42,7 +42,16 @@ $.ajax({
 - 打印
   ![WechatIMG242](./images/WechatIMG242.jpg)
 
-
 ## 响应拦截
 
+- 全局响应拦截
 
+```js
+// 设置全局AJAX响应拦截器
+$(document).ajaxComplete(function (event, jqXHR, ajaxOptions) {
+  // 在这里可以访问jqXHR对象和ajax选项
+  console.log("AJAX请求完成拦截:", jqXHR);
+  // 可以在这里修改jqXHR对象或ajax选项
+  // ...
+});
+```
