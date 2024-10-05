@@ -1,6 +1,6 @@
-# Async/Await
+# async、await
 
-## 理解 Async/Await
+## 理解 async、await
 
 - async await 是用来解决异步的操作的(回调地狱), 返回一个 Promise 对象
 - 相比于 Generator 来说 Async 是 Generator 的语法糖
@@ -88,7 +88,7 @@ runGenerator(fetchDataGenerator).then((result) =>
 );
 ```
 
-## Async/Await 语法糖
+## async、await 语法糖
 
 - 示例
 
